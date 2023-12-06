@@ -14,7 +14,7 @@ Mitglieder:
 ## Reset the DB and Run the Server
 ### Windows
 Execute "start.bat" it will automatically reset the db and start the server
-(You might have to type in "yes" somewher
+(You might have to type in "yes" somewhere)
 
 ### Mac
 1. Go into the Python environment (by running the activate script)
