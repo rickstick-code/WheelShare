@@ -27,6 +27,7 @@ class Offering(models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
     start = models.DateTimeField()
     end = models.DateTimeField()
+    price = models.FloatField()
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     comments = models.TextField(null=True)
     active = models.BooleanField(default=True)
