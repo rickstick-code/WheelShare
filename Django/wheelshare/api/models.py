@@ -11,7 +11,7 @@ class Vehicle(models.Model):
     model = models.TextField()
     year = models.IntegerField()
     horsepower = models.IntegerField()
-    no. of seats = models.IntegerField()
+    number_of_seats = models.IntegerField()
     automatic = models.BooleanField(null=True)
     vignette = models.BooleanField(null=True)
     comments = models.TextField(null=True)
@@ -19,8 +19,8 @@ class Vehicle(models.Model):
 
 # Offer Location
 class Location(models.Model):
-    latitude = models.Floatfield()
-    longitude = models.Floatfield()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
 
 # Offer Entity
 class Offering(models.Model):
