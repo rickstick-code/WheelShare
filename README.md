@@ -9,6 +9,8 @@ Mitglieder:
 - Frederick Van Bockryck
 - Daria Karmakulova
 
+
+
 ## Reset the DB and Run the Server
 ### Windows
 Execute "start.bat" it will automatically reset the db and start the server
@@ -19,10 +21,3 @@ Execute "start.bat" it will automatically reset the db and start the server
 2. Run "python manage.py flush" to remove old data
 3. Run "python manage.py example_data" to reset the DB
 4. Run "python manage.py runserver"
-
-
-## Install Instructions
-1. Start CMD
-2. Run "(...)\Python\Environments\wheelshare\Scripts\activate" to get in the  Python Environment
-3. Use the "manage.py" in "(...)\Django\wheelshare" to run your app ("python manage.py runserver")
-
