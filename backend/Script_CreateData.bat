@@ -5,23 +5,23 @@ set API_URL=http://localhost:8000/api/users/
 set DATA_FORMAT=application/json
 
 :: User 1
-set DATA={\"username\":\"Lukas Meier\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"lukas.meier@beispiel.at\",\"address\":\"Herrengasse 10, 8010 Graz\",\"phone_number\":\"06991234567\"}
+set DATA={\"username\":\"LukasMeier\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"lukas.meier@beispiel.at\",\"address\":\"Herrengasse 10, 8010 Graz\",\"phone_number\":\"06991234567\"}
 curl -X POST %API_URL% -H "Content-Type: %DATA_FORMAT%" -d "!DATA!"
 
 :: User 2
-set DATA={\"username\":\"Sophie Baumgartner\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"sophie.baumgartner@beispiel.at\",\"address\":\"Kaiserfeldgasse 19, 8010 Graz\",\"phone_number\":\"06601234567\"}
+set DATA={\"username\":\"SophieBaumgartner\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"sophie.baumgartner@beispiel.at\",\"address\":\"Kaiserfeldgasse 19, 8010 Graz\",\"phone_number\":\"06601234567\"}
 curl -X POST %API_URL% -H "Content-Type: %DATA_FORMAT%" -d "!DATA!"
 
 :: User 3
-set DATA={\"username\":\"Max Klein\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"max.klein@beispiel.at\",\"address\":\"Schmiedgasse 26, 8010 Graz\",\"phone_number\":\"06991123456\"}
+set DATA={\"username\":\"MaxKlein\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"max.klein@beispiel.at\",\"address\":\"Schmiedgasse 26, 8010 Graz\",\"phone_number\":\"06991123456\"}
 curl -X POST %API_URL% -H "Content-Type: %DATA_FORMAT%" -d "!DATA!"
 
 :: User 4
-set DATA={\"username\":\"Eva Gruber\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"eva.gruber@beispiel.at\",\"address\":\"Getreidegasse 9, 5020 Salzburg\",\"phone_number\":\"06601122334\"}
+set DATA={\"username\":\"EvaGruber\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"eva.gruber@beispiel.at\",\"address\":\"Getreidegasse 9, 5020 Salzburg\",\"phone_number\":\"06601122334\"}
 curl -X POST %API_URL% -H "Content-Type: %DATA_FORMAT%" -d "!DATA!"
 
 :: User 5
-set DATA={\"username\":\"Felix Schmidt\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"felix.schmidt@beispiel.at\",\"address\":\"Maria-Theresien-Strasse 18, 6020 Innsbruck\",\"phone_number\":\"06998877665\"}
+set DATA={\"username\":\"FelixSchmidt\",\"password1\":\"test\",\"password2\":\"test\",\"email\":\"felix.schmidt@beispiel.at\",\"address\":\"Maria-Theresien-Strasse 18, 6020 Innsbruck\",\"phone_number\":\"06998877665\"}
 curl -X POST %API_URL% -H "Content-Type: %DATA_FORMAT%" -d "!DATA!"
 
 
