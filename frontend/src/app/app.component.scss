@@ -1,0 +1,75 @@
+
+.top-background {
+  position: fixed;
+  top: -10vh; // Start partially hidden
+  left: 0;
+  right: 0;
+  height: 15vh;
+  z-index: 5;
+  background-image: url('/assets/images/background_header.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: top 0.7s ease; // Smooth transition for sliding
+}
+
+.hover-trigger:hover ~ .top-background {
+  top: 0; // Fully reveal on hover
+}
+
+// Invisible div at the top of the page
+.hover-trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20vh; // Increased height to 15% of the viewport height
+  z-index: 10; // Below the toolbar z-index
+}
+
+// Base styles for all toolbars
+.toolbar-left, .toolbar-admin, .toolbar-right {
+  border-radius: 20px;
+  background-color: white;
+  position: fixed;
+  z-index: 15; // Above the hover-trigger z-index
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: top 0.5s ease;
+  top: -10vh; // Initially off-screen by 10% of viewport height
+}
+
+// Specific styles for each toolbar
+.toolbar-right {
+  right: 5%;
+  width: 20%;
+}
+
+.toolbar-admin {
+  right: 26%;
+  width: 10%;
+}
+
+.toolbar-left {
+  left: 5%;
+  width: 20%;
+}
+
+// Extend hover effect to include the toolbars themselves
+.hover-trigger:hover ~ .toolbar-left,
+.hover-trigger:hover ~ .toolbar-admin,
+.hover-trigger:hover ~ .toolbar-right,
+.toolbar-left:hover,
+.toolbar-admin:hover,
+.toolbar-right:hover,
+{
+  top: 5%; // Slide to 5% from the top
+}
+
+// Styles for marked buttons
+.mark {
+  background-color: rgba(88, 213, 142, 0.5);
+  border-radius: 50%;
+  height: 4vw;
+}

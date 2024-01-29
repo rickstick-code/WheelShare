@@ -1,0 +1,89 @@
+<div class="parent-container">
+  <h1>Bookings</h1>
+  <h3>Vehicles From You For Others!</h3>
+
+  <table mat-table style="width: 100%" [dataSource]="bookingsForOthers" class="mat-elevation-z8 component">
+    <ng-container matColumnDef="pk">
+      <th mat-header-cell *matHeaderCellDef >ID</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vehicle">
+      <th mat-header-cell *matHeaderCellDef >Vehicle</th>
+      <td mat-cell *matCellDef="let element"> {{getVehicle(element.vehicle).model}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="person_that_booked">
+      <th mat-header-cell *matHeaderCellDef >Booked By</th>
+      <td mat-cell *matCellDef="let element"> {{getUsername(element.person_that_books)}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="info">
+      <th mat-header-cell *matHeaderCellDef >Booking Info</th>
+      <td mat-cell *matCellDef="let element"> {{element.info}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef >Suggested Price</th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="approved">
+      <th mat-header-cell *matHeaderCellDef ></th>
+      <td mat-cell *matCellDef="let element">
+        <button *ngIf="!element.approved" (click)="approveBooking(element)" class="profile-button">Approve &#10003; </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button *ngIf="!element.approved" mat-button color="delete-button" (click)="deleteBooking(element)">Decline</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsForOthers"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsForOthers;"></tr>
+  </table>
+
+  <h3>Vehicles That You Booked!</h3>
+
+  <table mat-table style="width: 100%" [dataSource]="bookingsFromOthers" class="mat-elevation-z8 component">
+    <ng-container matColumnDef="pk">
+      <th mat-header-cell *matHeaderCellDef >ID</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vehicle">
+      <th mat-header-cell *matHeaderCellDef >Vehicle</th>
+      <td mat-cell *matCellDef="let element"> {{getVehicle(element.vehicle)?.model ?? "Unknown"}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="person_that_got_booked">
+      <th mat-header-cell *matHeaderCellDef >Booked From</th>
+      <td mat-cell *matCellDef="let element"> {{getJoinedUsernames(element) ?? "Unknown"}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="info">
+      <th mat-header-cell *matHeaderCellDef >Booking Info</th>
+      <td mat-cell *matCellDef="let element"> {{element?.info ?? "Unknown" }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef >Suggested Price</th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="approved">
+      <th mat-header-cell *matHeaderCellDef >Approved</th>
+      <td mat-cell *matCellDef="let element"> {{element.approved ? "&#10003;" : "&#10007;" }} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsFromOthers"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsFromOthers;"></tr>
+  </table>
+</div>
+

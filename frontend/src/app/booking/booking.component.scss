@@ -1,0 +1,124 @@
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  h1 {
+    text-align: center;
+    margin: 0.5vw 0 2vw 0; // Gap after "Vehicle Booking"
+  }
+
+  .vehicle-details {
+    position: relative;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 4vw;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px; // Thinner line
+      width: 150%; // Wider line
+      background-color: #000; // Line color
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      bottom: -1vw; // Adjusted to align with bottom padding
+    }
+
+    h3, p {
+      margin: 0; // Remove margins to eliminate gaps
+    }
+
+    .comment {
+      margin-bottom: 0; // Removed bottom margin from "Comment"
+    }
+  }
+
+  .additional-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2vw;
+  }
+
+  .field-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+  }
+
+  input[type="text"], input[type="number"] {
+    width: 100%;
+    height: 2vw;
+    padding: 0.5vw;
+    margin: 0.2vw 0;
+    border-radius: 0.5vw;
+    border: 1px solid #ccc;
+    font-size: 1vw;
+  }
+
+  small {
+    text-align: center;
+    font-size: 0.8vw;
+    margin-top: 0.5vw;
+  }
+
+  .buttons {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    .profile-button {
+      background-color: #58d58e;
+      border-radius: 2vw;
+      font-size: 1vw;
+      font-weight: bold;
+      padding: 1vw 2vw;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(#58d58e, 10%);
+      }
+    }
+  }
+}
+
+.owner-info-box {
+  width: 20%;
+  position: fixed;
+  right: 2%; // Margin from the right side
+  top: 50%;
+  transform: translateY(-50%); // Centered vertically
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center; // Center "Owner Information" text
+  }
+
+  p {
+    font-size: 0.8rem; // Smaller text size
+    margin: 5px 0;
+  }
+}

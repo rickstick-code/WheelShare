@@ -1,0 +1,67 @@
+.full-screen-component {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Aligns content to the top */
+  text-align: center;
+  background: url('/assets/images/login_background.png') no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 10vh; /* Adds padding at the top to push content down slightly */
+}
+
+.logo-image {
+  width: 350px;
+  margin-bottom: 20px;
+}
+
+.input-container-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center; /* Center align the content */
+  margin-bottom: 1vw;
+}
+
+.input-field {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 350px;
+  text-align: center;
+}
+
+.tiny {
+  font-family: Arial, sans-serif;
+  margin-top: 2vw;
+  align-self: center; /* Center the indicator beneath the register button */
+  margin-bottom: 1vw; /* Space above the indicator */
+}
+
+.login-button, .register-button {
+  padding: 15px 20px;
+  border-radius: 20px;
+  background-color: #58d58e;
+  color: black;
+  border: none;
+  width: 300px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px; /* Space between input fields and buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#58d58e, 10%);
+  }
+}

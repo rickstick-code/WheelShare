@@ -1,0 +1,40 @@
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+  margin-bottom: 3vw;
+
+  h1 {
+    margin-top: 30vh;
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+  }
+
+  h3 {
+    font-family: Arial, sans-serif;
+  }
+
+  .component {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+table{
+  margin-bottom: 3vw !important;
+}
+
+.profile-button {
+  background-color: #58d58e;
+  border-radius: 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+  margin: 1vw;
+  padding: 1vw 2vw;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#58d58e, 10%);
+  }
+}

@@ -1,0 +1,39 @@
+<!-- booking.component.html -->
+<div class="booking-container">
+  <h1>Vehicle Booking</h1>
+
+  <div class="vehicle-details">
+    <h3>{{vehicle?.model ?? '-'}}</h3>
+    <p>Number of Seats: {{vehicle?.number_of_seats ?? 0}}</p>
+    <p>Vignette: {{vehicle?.vignette ?? false ? 'Yes' : 'No'}}</p>
+    <p class="comment">Comment: {{vehicle?.comment ?? '-'}}</p>
+  </div>
+
+
+  <div class="additional-fields">
+    <div class="field-container">
+      <label for="info">Request:</label>
+      <input id="info" type="text" [(ngModel)]="booking.info" placeholder="e.g. 26.8 at around 15 o'clock">
+      <small>Note: Within this field you can fill in specific informations, like at which time you will need the vehicle</small>
+    </div>
+    <div class="field-container">
+      <label for="price">Suggested Price:</label>
+      <input id="price" type="text" [(ngModel)]="booking.price" placeholder="e.g 120€">
+      <small>Note: Within this field you can fill in your suggested price</small>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="profile-button" (click)="goBack()">Go Back</button>
+    <button class="profile-button" (click)="createBooking()">Create Booking</button>
+  </div>
+
+  <div class="owner-info-box">
+    <h3>Owner Information</h3>
+    <div *ngFor="let owner of ownersInfo">
+      <p>Name: {{ owner.username }}</p>
+      <p>Email: {{ owner.email }}</p>
+      <p>Phone: {{ owner.phone_number }}</p>
+    </div>
+  </div>
+</div>

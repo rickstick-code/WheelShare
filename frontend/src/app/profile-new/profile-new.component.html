@@ -1,0 +1,55 @@
+<form [formGroup]="userFormGroup" (ngSubmit)="createUser()">
+  <div class="profile-container">
+    <div class="title">Create New User</div>
+
+    <div class="main-content">
+      <!-- Credentials Column -->
+      <div class="credentials-column">
+        <!-- Username Field -->
+        <div class="field editable username">
+          <span class="static-text">Username:</span>
+          <input type="text" formControlName="username" class="editable-input"/>
+        </div>
+
+        <!-- Password Fields -->
+        <div class="field editable">
+          <span class="static-text">Password:</span>
+          <input type="password" formControlName="password1" class="editable-input"/>
+        </div>
+
+        <div class="field editable password2">
+          <span class="static-text">Password (Again):</span>
+          <input type="password" formControlName="password2" class="editable-input"/>
+        </div>
+      </div>
+
+      <!-- Contact Information Column -->
+      <div class="contact-info-column">
+        <!-- Email Field -->
+        <div class="field editable">
+          <span class="static-text">Email:</span>
+          <input type="email" formControlName="email" class="editable-input"/>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="field editable">
+          <span class="static-text">Phone:</span>
+          <input type="tel" formControlName="phone_number" class="editable-input"/>
+        </div>
+
+        <!-- Address Field -->
+        <div class="field editable">
+          <span class="static-text">Address:</span>
+          <input type="text" formControlName="address" class="editable-input"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="profile-button" type="submit">
+        &#9998; Create User
+      </button>
+    </div>
+  </div>
+</form>
+

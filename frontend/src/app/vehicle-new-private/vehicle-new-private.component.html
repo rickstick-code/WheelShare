@@ -1,0 +1,65 @@
+<form [formGroup]="vehicleFormGroup" (ngSubmit)="createVehicle()">
+  <div class="profile-container">
+    <div class="title">Create New Vehicle</div>
+
+    <div class="main-content">
+      <!-- Vehicle Details Column -->
+      <div class="vehicle-details-column">
+        <!-- Model Field -->
+        <div class="field editable model">
+          <span class="static-text">Model:</span>
+          <input type="text" formControlName="model" class="editable-input"/>
+        </div>
+
+        <!-- Number of Seats Field -->
+        <div class="field editable">
+          <span class="static-text">Number of Seats:</span>
+          <input type="number" formControlName="number_of_seats" class="editable-input"/>
+        </div>
+
+        <!-- Comment Field -->
+        <div class="field editable">
+          <span class="static-text">Comment:</span>
+          <input type="text" formControlName="comment" class="editable-input"/>
+        </div>
+
+        <div class="field editable">
+          <span class="static-text">Address:</span>
+          <input type="text" formControlName="address" class="editable-input"/>
+        </div>
+
+        <!-- Type Field -->
+        <div class="field editable">
+          <span class="static-text">Type:</span>
+          <mat-select  multiple placeholder="Vehicle Type" formControlName="type">
+            <mat-option *ngFor="let type of typeOptions" [value]="type">{{type.name}}</mat-option>
+          </mat-select>
+          <!-- <input type="text" formControlName="type" class="editable-input"/> -->
+        </div>
+
+        <!-- Vignette Field -->
+        <div class="field vignette-toggle">
+          <span class="static-text">Vignette:</span>
+          <div class="toggle-switch">
+            <input type="checkbox" id="vignette" formControlName="vignette">
+            <label for="vignette" class="switch"></label>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Side (Vehicle Image) -->
+      <div class="right-side">
+        <div class="vehicle-picture">
+          <img src="/assets/images/image_vehicle.png" alt="Vehicle Picture">
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="profile-button" type="submit">
+        &#9998; Create Vehicle
+      </button>
+    </div>
+  </div>
+</form>

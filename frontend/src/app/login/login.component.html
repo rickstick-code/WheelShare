@@ -1,0 +1,22 @@
+<form [formGroup]="loginFormGroup" class="full-screen-component">
+  <!-- Logo Image -->
+  <img src="./assets/images/logo.png" alt="Logo" class="logo-image">
+
+  <!-- Username and Password Fields with width matching the logo -->
+  <div class="input-container-total">
+    <div class="input-container">
+      <input type="text" formControlName="username" placeholder="Username" class="input-field" (input)="checkUsername()">
+    </div>
+    <div class="input-container">
+      <input type="password" formControlName="password" placeholder="Password" class="input-field">
+    </div>
+  </div>
+
+  <!-- Login Button -->
+  <button type="button" class="login-button" (click)="login()">Let's Share</button>
+
+  <!-- Register Button -->
+  <button type="button" class="register-button" (click)="register()">Register</button>
+  <span *ngIf="usernameChecked" class="tiny">{{ usernameExists ? '&#10007; username taken' : '&#10003; username not taken' }}</span>
+
+</form>

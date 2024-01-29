@@ -1,0 +1,49 @@
+<div class="parent-container">
+  <h1>Admin Panel - Profiles</h1>
+
+  <table mat-table style="width: 100%" [dataSource]="users" class="mat-elevation-z8 component">
+    <ng-container matColumnDef="pk">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{element.pk}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{element.username}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-Mail</th>
+      <td mat-cell *matCellDef="let element">{{element.email}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td mat-cell *matCellDef="let element">{{element.address}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone_number">
+      <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+      <td mat-cell *matCellDef="let element">{{element.phone_number}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>
+        <button class="profile-button" [routerLink]="'/profile-new/'">New</button>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <button class="profile-button" [routerLink]="'/profile-edit/' + element.pk">Edit</button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="delete-button" (click)="deleteUser(element)">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

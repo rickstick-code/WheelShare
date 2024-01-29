@@ -1,0 +1,45 @@
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%; // Side padding to reduce table width
+  margin-bottom: 10%;
+
+  h1 {
+    margin-top: 30vh; // Significantly increased top margin
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+  }
+
+  .component {
+    width: 90%; // Directly set the width of the table
+    margin: 0 auto; // Center the table
+  }
+}
+
+.profile-button {
+  background-color: #58d58e;
+  border-radius: 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+  margin: 1vw;
+  padding: 1vw 2vw;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#58d58e, 10%);
+  }
+}
+
+.delete-button {
+  background-color: #259455;
+  border-radius: 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+  padding: 1vw 2vw;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#259455, 2%);
+  }
+}

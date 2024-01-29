@@ -1,0 +1,31 @@
+<div class="hover-trigger"></div>
+<div class="top-background" *ngIf="userService.isLoggedIn$ | async"></div>
+<!-- The rest of your page content -->
+  <mat-toolbar class="toolbar-left" *ngIf="userService.isLoggedIn$ | async">
+    <h1>Hello {{ userService.currentUser.username }}!</h1>
+  </mat-toolbar>
+
+  <mat-toolbar class="toolbar-admin" *ngIf="userService.hasPermission('userapi.change_user')" >
+    <button mat-button routerLink="profiles-list"  [ngClass]="{'mark': isCurrentRoute('/profiles-list')}">
+      <img src="./assets/images/icon_profiles_list.png" alt="Logo" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+    </button>
+    <button mat-button routerLink="vehicles-list"  [ngClass]="{'mark': isCurrentRoute('/vehicles-list')}">
+      <img src="./assets/images/icon_vehicles_list.png" alt="Logo" style="width: 50%; display: block; margin-left: auto; margin-right: auto;">
+    </button>
+  </mat-toolbar>
+
+  <mat-toolbar class="toolbar-right" *ngIf="userService.isLoggedIn$ | async">
+    <button mat-button routerLink="main-map"  [ngClass]="{'mark': isCurrentRoute('/main-map')}">
+      <img src="./assets/images/icon_house.png" alt="Logo" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+    </button>
+    <button mat-button routerLink="bookings-list"  [ngClass]="{'mark': isCurrentRoute('/bookings-list')}">
+      <img src="./assets/images/icon_bookings.png" alt="Logo" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+    </button>
+    <button mat-button routerLink="profile" [ngClass]="{'mark': isCurrentRoute('/profile')}">
+      <img src="./assets/images/icon_profile.png" alt="Logo" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+    </button>
+    <button mat-button (click)="userService.logout()">
+      <img src="./assets/images/icon_logout.png" alt="Logo" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+    </button>
+  </mat-toolbar>
+<router-outlet></router-outlet>

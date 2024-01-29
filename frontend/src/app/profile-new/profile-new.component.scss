@@ -1,0 +1,98 @@
+.profile-container {
+  position: absolute;
+  top: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  margin-bottom: 6vh;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.credentials-column, .contact-info-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 2vw;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+  width: 100%;
+}
+
+.field .static-text {
+  font-family: Arial, sans-serif;
+  font-size: 1.2vw;
+  font-weight: bold;
+  width: 30%;
+  display: inline-block;
+  text-align: right;
+  margin-right: 1vw;
+}
+
+.editable-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0.2vw;
+  padding: 0.8vw;
+  font-size: 1vw;
+  width: 70%;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  margin-left: 2vw;
+}
+
+.profile-picture {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10vw;
+  height: 10vw;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover img {
+    filter: grayscale(20%) blur(3px);
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+}
+
+.profile-button {
+  background-color: #58d58e;
+  border-radius: 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+  margin: 1vw;
+  padding: 1vw 2vw;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#58d58e, 10%);
+  }
+}
